@@ -1,0 +1,9 @@
+library ieee;
+use ieee.std_logic_1164.all;
+entity seven_segment is 
+	port(
+		state : in std_logic;
+		sevseg_data : out std_logic_vector (6 downto 0); -- abcdefg
+		sevseg_driver : out std_logic_vector (5 downto 0) --character index
+	);
+end entity;

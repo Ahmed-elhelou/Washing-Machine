@@ -1,0 +1,41 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'clk'
+Slack : -10.233
+TNS   : -644.354
+
+Type  : Setup 'clock_devider:washing_machine_clock_devider|curr_out'
+Slack : -8.480
+TNS   : -113.447
+
+Type  : Setup 'clock_devider:sev_seg_clock_devider|curr_out'
+Slack : -2.161
+TNS   : -6.041
+
+Type  : Hold 'clk'
+Slack : -1.839
+TNS   : -2.987
+
+Type  : Hold 'clock_devider:washing_machine_clock_devider|curr_out'
+Slack : 1.798
+TNS   : 0.000
+
+Type  : Hold 'clock_devider:sev_seg_clock_devider|curr_out'
+Slack : 2.015
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'clk'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'clock_devider:sev_seg_clock_devider|curr_out'
+Slack : 0.247
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'clock_devider:washing_machine_clock_devider|curr_out'
+Slack : 0.247
+TNS   : 0.000
+
+------------------------------------------------------------

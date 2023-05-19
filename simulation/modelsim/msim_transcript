@@ -1,0 +1,130 @@
+# Reading pref.tcl
+# do FinalProject_run_msim_gate_vhdl.do
+# if ![file isdirectory vhdl_libs] {
+# 	file mkdir vhdl_libs
+# }
+# 
+# vlib vhdl_libs/maxv
+# ** Warning: (vlib-34) Library already exists at "vhdl_libs/maxv".
+# vmap maxv ./vhdl_libs/maxv
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap maxv ./vhdl_libs/maxv 
+# Copying C:/intelFPGA/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# vcom -93 -work maxv {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/maxv_atoms.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 02:49:52 on May 20,2023
+# vcom -reportprogress 300 -93 -work maxv c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/maxv_atoms.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Compiling package maxv_atom_pack
+# -- Compiling package body maxv_atom_pack
+# -- Loading package maxv_atom_pack
+# -- Compiling package maxv_pllpack
+# -- Compiling package body maxv_pllpack
+# -- Loading package maxv_pllpack
+# -- Loading package maxv_atom_pack
+# -- Compiling entity maxv_dffe
+# -- Compiling architecture behave of maxv_dffe
+# -- Compiling entity maxv_mux21
+# -- Compiling architecture AltVITAL of maxv_mux21
+# -- Compiling entity maxv_mux41
+# -- Compiling architecture AltVITAL of maxv_mux41
+# -- Compiling entity maxv_and1
+# -- Compiling architecture AltVITAL of maxv_and1
+# -- Compiling entity maxv_jtag
+# -- Compiling architecture architecture_jtag of maxv_jtag
+# -- Compiling entity maxv_crcblock
+# -- Compiling architecture architecture_crcblock of maxv_crcblock
+# -- Compiling entity maxv_asynch_lcell
+# -- Compiling architecture vital_le of maxv_asynch_lcell
+# -- Compiling entity maxv_lcell_register
+# -- Compiling architecture vital_le_reg of maxv_lcell_register
+# -- Loading entity maxv_asynch_lcell
+# -- Loading entity maxv_lcell_register
+# -- Compiling entity maxv_lcell
+# -- Compiling architecture vital_le_atom of maxv_lcell
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_SIGNED
+# -- Compiling entity maxv_ufm
+# -- Compiling architecture behave of maxv_ufm
+# -- Compiling entity maxv_io
+# -- Compiling architecture behave of maxv_io
+# -- Compiling entity maxv_routing_wire
+# ** Warning: c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/maxv_atoms.vhd(3345): (vcom-1288) VITAL timing generic "tpd_datainglitch_dataout" port specification "datainglitch" does not denote a port.
+# (1076.4 section 4.3.2.1.3)
+# -- Compiling architecture behave of maxv_routing_wire
+# End time: 02:49:52 on May 20,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# vcom -93 -work maxv {c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/maxv_components.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 02:49:52 on May 20,2023
+# vcom -reportprogress 300 -93 -work maxv c:/intelfpga_lite/22.1std/quartus/eda/sim_lib/maxv_components.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package maxv_atom_pack
+# -- Compiling package maxv_components
+# End time: 02:49:52 on May 20,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work gate_work 
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {FinalProject.vho}
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 02:49:52 on May 20,2023
+# vcom -reportprogress 300 -93 -work work FinalProject.vho 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package maxv_atom_pack
+# -- Loading package maxv_components
+# -- Compiling entity main
+# -- Compiling architecture structure of main
+# End time: 02:49:53 on May 20,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+vsim work.main(structure)
+# vsim work.main(structure) 
+# Start time: 02:49:56 on May 20,2023
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading maxv.maxv_atom_pack(body)
+# Loading maxv.maxv_components
+# Loading work.main(structure)
+# Loading ieee.std_logic_arith(body)
+# Loading maxv.maxv_io(behave)
+# Loading maxv.maxv_lcell(vital_le_atom)
+# Loading maxv.maxv_asynch_lcell(vital_le)
+# Loading maxv.maxv_lcell_register(vital_le_reg)
+# ** Warning: Design size of 96956 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
+add wave -position end  sim:/main/clk
+add wave -position end  sim:/main/userProg
+add wave -position end  sim:/main/start
+add wave -position end  sim:/main/reset
+add wave -position end  sim:/main/state
+add wave -position end  sim:/main/sevSeg_data
+add wave -position end  sim:/main/sevSeg_driver
+force -freeze sim:/main/clk 1 0, 0 {10000000 ps} -r 20000000
+force -freeze sim:/main/userProg 01000 0
+force -freeze sim:/main/start 1 0
+force -freeze sim:/main/reset 0 0
+run

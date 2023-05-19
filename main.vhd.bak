@@ -1,0 +1,12 @@
+ثlibrary ieee;
+use ieee.std_logic_1164.all;
+entity main is
+	port(
+		userProg : in std_logic_vector (4 downto 0);
+		clk, reset, start : in std_logic;
+		state : out std_logic_vector (1 downto 0);
+		sevSeg_data : out std_logic_vector (6 downto 0); -- abcdefg
+		sevSeg_driver : out std_logic_vector (5 downto 0) --character index
+	);
+end entity;
+

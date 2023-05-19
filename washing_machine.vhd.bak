@@ -1,0 +1,15 @@
+library ieee;
+use ieee.std_logic_1164.all;
+entity washing_machine is
+	port(
+		userProg : in std_logic_vector (4 downto 0);
+		clk, reset, start : in std_logic;
+		sevseg_data : out std_logic_vector (6 downto 0);
+		sevseg_driver : out std_logic_vector (5 downto 0)
+	);
+end entity;
+
+architecture washing_machine_arch of washing_machine is
+begin
+
+end architecture

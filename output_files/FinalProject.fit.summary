@@ -1,0 +1,11 @@
+Fitter Status : Successful - Sat May 20 02:49:40 2023
+Quartus Prime Version : 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+Revision Name : FinalProject
+Top-level Entity Name : main
+Family : MAX V
+Device : 5M240ZM68C4
+Timing Models : Final
+Total logic elements : 173 / 240 ( 72 % )
+Total pins : 23 / 52 ( 44 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

@@ -1,0 +1,811 @@
+Timing Analyzer report for FinalProject
+Sat May 20 02:49:43 2023
+Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'clk'
+ 12. Setup: 'clock_devider:washing_machine_clock_devider|curr_out'
+ 13. Setup: 'clock_devider:sev_seg_clock_devider|curr_out'
+ 14. Hold: 'clk'
+ 15. Hold: 'clock_devider:washing_machine_clock_devider|curr_out'
+ 16. Hold: 'clock_devider:sev_seg_clock_devider|curr_out'
+ 17. Setup Transfers
+ 18. Hold Transfers
+ 19. Report TCCS
+ 20. Report RSKM
+ 21. Unconstrained Paths Summary
+ 22. Clock Status Summary
+ 23. Unconstrained Input Ports
+ 24. Unconstrained Output Ports
+ 25. Unconstrained Input Ports
+ 26. Unconstrained Output Ports
+ 27. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++--------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                        ;
++-----------------------+--------------------------------------------------------+
+; Quartus Prime Version ; Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                                 ;
+; Revision Name         ; FinalProject                                           ;
+; Device Family         ; MAX V                                                  ;
+; Device Name           ; 5M240ZM68C4                                            ;
+; Timing Models         ; Final                                                  ;
+; Delay Model           ; Slow Model                                             ;
+; Rise/Fall Delays      ; Unavailable                                            ;
++-----------------------+--------------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                                                                     ;
++------------------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------------------------------------+
+; Clock Name                                           ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                                                  ;
++------------------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------------------------------------+
+; clk                                                  ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk }                                                  ;
+; clock_devider:sev_seg_clock_devider|curr_out         ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clock_devider:sev_seg_clock_devider|curr_out }         ;
+; clock_devider:washing_machine_clock_devider|curr_out ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clock_devider:washing_machine_clock_devider|curr_out } ;
++------------------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Fmax Summary                                                                               ;
++------------+-----------------+------------------------------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                                           ; Note ;
++------------+-----------------+------------------------------------------------------+------+
+; 89.02 MHz  ; 89.02 MHz       ; clk                                                  ;      ;
+; 105.49 MHz ; 105.49 MHz      ; clock_devider:washing_machine_clock_devider|curr_out ;      ;
+; 316.36 MHz ; 316.36 MHz      ; clock_devider:sev_seg_clock_devider|curr_out         ;      ;
++------------+-----------------+------------------------------------------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------------------------------------------------------+
+; Setup Summary                                                                  ;
++------------------------------------------------------+---------+---------------+
+; Clock                                                ; Slack   ; End Point TNS ;
++------------------------------------------------------+---------+---------------+
+; clk                                                  ; -10.233 ; -644.354      ;
+; clock_devider:washing_machine_clock_devider|curr_out ; -8.480  ; -113.447      ;
+; clock_devider:sev_seg_clock_devider|curr_out         ; -2.161  ; -6.041        ;
++------------------------------------------------------+---------+---------------+
+
+
++-------------------------------------------------------------------------------+
+; Hold Summary                                                                  ;
++------------------------------------------------------+--------+---------------+
+; Clock                                                ; Slack  ; End Point TNS ;
++------------------------------------------------------+--------+---------------+
+; clk                                                  ; -1.839 ; -2.987        ;
+; clock_devider:washing_machine_clock_devider|curr_out ; 1.798  ; 0.000         ;
+; clock_devider:sev_seg_clock_devider|curr_out         ; 2.015  ; 0.000         ;
++------------------------------------------------------+--------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++-------------------------------------------------------------------------------+
+; Minimum Pulse Width Summary                                                   ;
++------------------------------------------------------+--------+---------------+
+; Clock                                                ; Slack  ; End Point TNS ;
++------------------------------------------------------+--------+---------------+
+; clk                                                  ; -2.289 ; -2.289        ;
+; clock_devider:sev_seg_clock_devider|curr_out         ; 0.247  ; 0.000         ;
+; clock_devider:washing_machine_clock_devider|curr_out ; 0.247  ; 0.000         ;
++------------------------------------------------------+--------+---------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'clk'                                                                                                                                                                                      ;
++---------+---------------------------------------------------------+---------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                                               ; To Node                                                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+---------------------------------------------------------+---------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -10.233 ; clock_devider:sev_seg_clock_devider|counter[20]         ; clock_devider:sev_seg_clock_devider|counter[16]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.973     ;
+; -10.233 ; clock_devider:sev_seg_clock_devider|counter[20]         ; clock_devider:sev_seg_clock_devider|counter[17]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.973     ;
+; -10.233 ; clock_devider:sev_seg_clock_devider|counter[20]         ; clock_devider:sev_seg_clock_devider|counter[20]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.973     ;
+; -10.233 ; clock_devider:sev_seg_clock_devider|counter[20]         ; clock_devider:sev_seg_clock_devider|counter[21]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.973     ;
+; -10.233 ; clock_devider:sev_seg_clock_devider|counter[20]         ; clock_devider:sev_seg_clock_devider|counter[22]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.973     ;
+; -10.233 ; clock_devider:sev_seg_clock_devider|counter[20]         ; clock_devider:sev_seg_clock_devider|counter[23]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.973     ;
+; -10.233 ; clock_devider:sev_seg_clock_devider|counter[20]         ; clock_devider:sev_seg_clock_devider|counter[18]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.973     ;
+; -10.233 ; clock_devider:sev_seg_clock_devider|counter[20]         ; clock_devider:sev_seg_clock_devider|counter[19]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.973     ;
+; -10.233 ; clock_devider:sev_seg_clock_devider|counter[20]         ; clock_devider:sev_seg_clock_devider|counter[24]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.973     ;
+; -10.233 ; clock_devider:sev_seg_clock_devider|counter[20]         ; clock_devider:sev_seg_clock_devider|counter[25]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.973     ;
+; -10.094 ; clock_devider:sev_seg_clock_devider|counter[20]         ; clock_devider:sev_seg_clock_devider|counter[0]          ; clk          ; clk         ; 1.000        ; 0.000      ; 10.834     ;
+; -10.094 ; clock_devider:sev_seg_clock_devider|counter[20]         ; clock_devider:sev_seg_clock_devider|counter[1]          ; clk          ; clk         ; 1.000        ; 0.000      ; 10.834     ;
+; -10.094 ; clock_devider:sev_seg_clock_devider|counter[20]         ; clock_devider:sev_seg_clock_devider|counter[2]          ; clk          ; clk         ; 1.000        ; 0.000      ; 10.834     ;
+; -10.094 ; clock_devider:sev_seg_clock_devider|counter[20]         ; clock_devider:sev_seg_clock_devider|counter[3]          ; clk          ; clk         ; 1.000        ; 0.000      ; 10.834     ;
+; -10.094 ; clock_devider:sev_seg_clock_devider|counter[20]         ; clock_devider:sev_seg_clock_devider|counter[4]          ; clk          ; clk         ; 1.000        ; 0.000      ; 10.834     ;
+; -10.094 ; clock_devider:sev_seg_clock_devider|counter[20]         ; clock_devider:sev_seg_clock_devider|counter[5]          ; clk          ; clk         ; 1.000        ; 0.000      ; 10.834     ;
+; -10.092 ; clock_devider:sev_seg_clock_devider|counter[20]         ; clock_devider:sev_seg_clock_devider|counter[6]          ; clk          ; clk         ; 1.000        ; 0.000      ; 10.832     ;
+; -10.092 ; clock_devider:sev_seg_clock_devider|counter[20]         ; clock_devider:sev_seg_clock_devider|counter[7]          ; clk          ; clk         ; 1.000        ; 0.000      ; 10.832     ;
+; -10.092 ; clock_devider:sev_seg_clock_devider|counter[20]         ; clock_devider:sev_seg_clock_devider|counter[8]          ; clk          ; clk         ; 1.000        ; 0.000      ; 10.832     ;
+; -10.092 ; clock_devider:sev_seg_clock_devider|counter[20]         ; clock_devider:sev_seg_clock_devider|counter[9]          ; clk          ; clk         ; 1.000        ; 0.000      ; 10.832     ;
+; -10.092 ; clock_devider:sev_seg_clock_devider|counter[20]         ; clock_devider:sev_seg_clock_devider|counter[10]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.832     ;
+; -10.092 ; clock_devider:sev_seg_clock_devider|counter[20]         ; clock_devider:sev_seg_clock_devider|counter[11]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.832     ;
+; -10.092 ; clock_devider:sev_seg_clock_devider|counter[20]         ; clock_devider:sev_seg_clock_devider|counter[12]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.832     ;
+; -10.092 ; clock_devider:sev_seg_clock_devider|counter[20]         ; clock_devider:sev_seg_clock_devider|counter[13]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.832     ;
+; -10.092 ; clock_devider:sev_seg_clock_devider|counter[20]         ; clock_devider:sev_seg_clock_devider|counter[14]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.832     ;
+; -10.092 ; clock_devider:sev_seg_clock_devider|counter[20]         ; clock_devider:sev_seg_clock_devider|counter[15]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.832     ;
+; -10.053 ; clock_devider:sev_seg_clock_devider|counter[13]         ; clock_devider:sev_seg_clock_devider|counter[16]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.793     ;
+; -10.053 ; clock_devider:sev_seg_clock_devider|counter[13]         ; clock_devider:sev_seg_clock_devider|counter[17]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.793     ;
+; -10.053 ; clock_devider:sev_seg_clock_devider|counter[13]         ; clock_devider:sev_seg_clock_devider|counter[20]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.793     ;
+; -10.053 ; clock_devider:sev_seg_clock_devider|counter[13]         ; clock_devider:sev_seg_clock_devider|counter[21]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.793     ;
+; -10.053 ; clock_devider:sev_seg_clock_devider|counter[13]         ; clock_devider:sev_seg_clock_devider|counter[22]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.793     ;
+; -10.053 ; clock_devider:sev_seg_clock_devider|counter[13]         ; clock_devider:sev_seg_clock_devider|counter[23]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.793     ;
+; -10.053 ; clock_devider:sev_seg_clock_devider|counter[13]         ; clock_devider:sev_seg_clock_devider|counter[18]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.793     ;
+; -10.053 ; clock_devider:sev_seg_clock_devider|counter[13]         ; clock_devider:sev_seg_clock_devider|counter[19]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.793     ;
+; -10.053 ; clock_devider:sev_seg_clock_devider|counter[13]         ; clock_devider:sev_seg_clock_devider|counter[24]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.793     ;
+; -10.053 ; clock_devider:sev_seg_clock_devider|counter[13]         ; clock_devider:sev_seg_clock_devider|counter[25]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.793     ;
+; -9.983  ; clock_devider:sev_seg_clock_devider|counter[8]          ; clock_devider:sev_seg_clock_devider|counter[16]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.723     ;
+; -9.983  ; clock_devider:sev_seg_clock_devider|counter[8]          ; clock_devider:sev_seg_clock_devider|counter[17]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.723     ;
+; -9.983  ; clock_devider:sev_seg_clock_devider|counter[8]          ; clock_devider:sev_seg_clock_devider|counter[20]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.723     ;
+; -9.983  ; clock_devider:sev_seg_clock_devider|counter[8]          ; clock_devider:sev_seg_clock_devider|counter[21]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.723     ;
+; -9.983  ; clock_devider:sev_seg_clock_devider|counter[8]          ; clock_devider:sev_seg_clock_devider|counter[22]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.723     ;
+; -9.983  ; clock_devider:sev_seg_clock_devider|counter[8]          ; clock_devider:sev_seg_clock_devider|counter[23]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.723     ;
+; -9.983  ; clock_devider:sev_seg_clock_devider|counter[8]          ; clock_devider:sev_seg_clock_devider|counter[18]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.723     ;
+; -9.983  ; clock_devider:sev_seg_clock_devider|counter[8]          ; clock_devider:sev_seg_clock_devider|counter[19]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.723     ;
+; -9.983  ; clock_devider:sev_seg_clock_devider|counter[8]          ; clock_devider:sev_seg_clock_devider|counter[24]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.723     ;
+; -9.983  ; clock_devider:sev_seg_clock_devider|counter[8]          ; clock_devider:sev_seg_clock_devider|counter[25]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.723     ;
+; -9.914  ; clock_devider:sev_seg_clock_devider|counter[13]         ; clock_devider:sev_seg_clock_devider|counter[0]          ; clk          ; clk         ; 1.000        ; 0.000      ; 10.654     ;
+; -9.914  ; clock_devider:sev_seg_clock_devider|counter[13]         ; clock_devider:sev_seg_clock_devider|counter[1]          ; clk          ; clk         ; 1.000        ; 0.000      ; 10.654     ;
+; -9.914  ; clock_devider:sev_seg_clock_devider|counter[13]         ; clock_devider:sev_seg_clock_devider|counter[2]          ; clk          ; clk         ; 1.000        ; 0.000      ; 10.654     ;
+; -9.914  ; clock_devider:sev_seg_clock_devider|counter[13]         ; clock_devider:sev_seg_clock_devider|counter[3]          ; clk          ; clk         ; 1.000        ; 0.000      ; 10.654     ;
+; -9.914  ; clock_devider:sev_seg_clock_devider|counter[13]         ; clock_devider:sev_seg_clock_devider|counter[4]          ; clk          ; clk         ; 1.000        ; 0.000      ; 10.654     ;
+; -9.914  ; clock_devider:sev_seg_clock_devider|counter[13]         ; clock_devider:sev_seg_clock_devider|counter[5]          ; clk          ; clk         ; 1.000        ; 0.000      ; 10.654     ;
+; -9.912  ; clock_devider:sev_seg_clock_devider|counter[13]         ; clock_devider:sev_seg_clock_devider|counter[6]          ; clk          ; clk         ; 1.000        ; 0.000      ; 10.652     ;
+; -9.912  ; clock_devider:sev_seg_clock_devider|counter[13]         ; clock_devider:sev_seg_clock_devider|counter[7]          ; clk          ; clk         ; 1.000        ; 0.000      ; 10.652     ;
+; -9.912  ; clock_devider:sev_seg_clock_devider|counter[13]         ; clock_devider:sev_seg_clock_devider|counter[8]          ; clk          ; clk         ; 1.000        ; 0.000      ; 10.652     ;
+; -9.912  ; clock_devider:sev_seg_clock_devider|counter[13]         ; clock_devider:sev_seg_clock_devider|counter[9]          ; clk          ; clk         ; 1.000        ; 0.000      ; 10.652     ;
+; -9.912  ; clock_devider:sev_seg_clock_devider|counter[13]         ; clock_devider:sev_seg_clock_devider|counter[10]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.652     ;
+; -9.912  ; clock_devider:sev_seg_clock_devider|counter[13]         ; clock_devider:sev_seg_clock_devider|counter[11]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.652     ;
+; -9.912  ; clock_devider:sev_seg_clock_devider|counter[13]         ; clock_devider:sev_seg_clock_devider|counter[12]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.652     ;
+; -9.912  ; clock_devider:sev_seg_clock_devider|counter[13]         ; clock_devider:sev_seg_clock_devider|counter[13]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.652     ;
+; -9.912  ; clock_devider:sev_seg_clock_devider|counter[13]         ; clock_devider:sev_seg_clock_devider|counter[14]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.652     ;
+; -9.912  ; clock_devider:sev_seg_clock_devider|counter[13]         ; clock_devider:sev_seg_clock_devider|counter[15]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.652     ;
+; -9.868  ; clock_devider:sev_seg_clock_devider|counter[16]         ; clock_devider:sev_seg_clock_devider|counter[16]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.608     ;
+; -9.868  ; clock_devider:sev_seg_clock_devider|counter[16]         ; clock_devider:sev_seg_clock_devider|counter[17]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.608     ;
+; -9.868  ; clock_devider:sev_seg_clock_devider|counter[16]         ; clock_devider:sev_seg_clock_devider|counter[20]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.608     ;
+; -9.868  ; clock_devider:sev_seg_clock_devider|counter[16]         ; clock_devider:sev_seg_clock_devider|counter[21]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.608     ;
+; -9.868  ; clock_devider:sev_seg_clock_devider|counter[16]         ; clock_devider:sev_seg_clock_devider|counter[22]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.608     ;
+; -9.868  ; clock_devider:sev_seg_clock_devider|counter[16]         ; clock_devider:sev_seg_clock_devider|counter[23]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.608     ;
+; -9.868  ; clock_devider:sev_seg_clock_devider|counter[16]         ; clock_devider:sev_seg_clock_devider|counter[18]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.608     ;
+; -9.868  ; clock_devider:sev_seg_clock_devider|counter[16]         ; clock_devider:sev_seg_clock_devider|counter[19]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.608     ;
+; -9.868  ; clock_devider:sev_seg_clock_devider|counter[16]         ; clock_devider:sev_seg_clock_devider|counter[24]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.608     ;
+; -9.868  ; clock_devider:sev_seg_clock_devider|counter[16]         ; clock_devider:sev_seg_clock_devider|counter[25]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.608     ;
+; -9.844  ; clock_devider:sev_seg_clock_devider|counter[8]          ; clock_devider:sev_seg_clock_devider|counter[0]          ; clk          ; clk         ; 1.000        ; 0.000      ; 10.584     ;
+; -9.844  ; clock_devider:sev_seg_clock_devider|counter[8]          ; clock_devider:sev_seg_clock_devider|counter[1]          ; clk          ; clk         ; 1.000        ; 0.000      ; 10.584     ;
+; -9.844  ; clock_devider:sev_seg_clock_devider|counter[8]          ; clock_devider:sev_seg_clock_devider|counter[2]          ; clk          ; clk         ; 1.000        ; 0.000      ; 10.584     ;
+; -9.844  ; clock_devider:sev_seg_clock_devider|counter[8]          ; clock_devider:sev_seg_clock_devider|counter[3]          ; clk          ; clk         ; 1.000        ; 0.000      ; 10.584     ;
+; -9.844  ; clock_devider:sev_seg_clock_devider|counter[8]          ; clock_devider:sev_seg_clock_devider|counter[4]          ; clk          ; clk         ; 1.000        ; 0.000      ; 10.584     ;
+; -9.844  ; clock_devider:sev_seg_clock_devider|counter[8]          ; clock_devider:sev_seg_clock_devider|counter[5]          ; clk          ; clk         ; 1.000        ; 0.000      ; 10.584     ;
+; -9.842  ; clock_devider:sev_seg_clock_devider|counter[8]          ; clock_devider:sev_seg_clock_devider|counter[6]          ; clk          ; clk         ; 1.000        ; 0.000      ; 10.582     ;
+; -9.842  ; clock_devider:sev_seg_clock_devider|counter[8]          ; clock_devider:sev_seg_clock_devider|counter[7]          ; clk          ; clk         ; 1.000        ; 0.000      ; 10.582     ;
+; -9.842  ; clock_devider:sev_seg_clock_devider|counter[8]          ; clock_devider:sev_seg_clock_devider|counter[8]          ; clk          ; clk         ; 1.000        ; 0.000      ; 10.582     ;
+; -9.842  ; clock_devider:sev_seg_clock_devider|counter[8]          ; clock_devider:sev_seg_clock_devider|counter[9]          ; clk          ; clk         ; 1.000        ; 0.000      ; 10.582     ;
+; -9.842  ; clock_devider:sev_seg_clock_devider|counter[8]          ; clock_devider:sev_seg_clock_devider|counter[10]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.582     ;
+; -9.842  ; clock_devider:sev_seg_clock_devider|counter[8]          ; clock_devider:sev_seg_clock_devider|counter[11]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.582     ;
+; -9.842  ; clock_devider:sev_seg_clock_devider|counter[8]          ; clock_devider:sev_seg_clock_devider|counter[12]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.582     ;
+; -9.842  ; clock_devider:sev_seg_clock_devider|counter[8]          ; clock_devider:sev_seg_clock_devider|counter[13]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.582     ;
+; -9.842  ; clock_devider:sev_seg_clock_devider|counter[8]          ; clock_devider:sev_seg_clock_devider|counter[14]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.582     ;
+; -9.842  ; clock_devider:sev_seg_clock_devider|counter[8]          ; clock_devider:sev_seg_clock_devider|counter[15]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.582     ;
+; -9.836  ; clock_devider:washing_machine_clock_devider|counter[30] ; clock_devider:washing_machine_clock_devider|counter[6]  ; clk          ; clk         ; 1.000        ; 0.000      ; 10.576     ;
+; -9.836  ; clock_devider:washing_machine_clock_devider|counter[30] ; clock_devider:washing_machine_clock_devider|counter[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 10.576     ;
+; -9.836  ; clock_devider:washing_machine_clock_devider|counter[30] ; clock_devider:washing_machine_clock_devider|counter[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 10.576     ;
+; -9.836  ; clock_devider:washing_machine_clock_devider|counter[30] ; clock_devider:washing_machine_clock_devider|counter[9]  ; clk          ; clk         ; 1.000        ; 0.000      ; 10.576     ;
+; -9.836  ; clock_devider:washing_machine_clock_devider|counter[30] ; clock_devider:washing_machine_clock_devider|counter[10] ; clk          ; clk         ; 1.000        ; 0.000      ; 10.576     ;
+; -9.836  ; clock_devider:washing_machine_clock_devider|counter[30] ; clock_devider:washing_machine_clock_devider|counter[11] ; clk          ; clk         ; 1.000        ; 0.000      ; 10.576     ;
+; -9.836  ; clock_devider:washing_machine_clock_devider|counter[30] ; clock_devider:washing_machine_clock_devider|counter[12] ; clk          ; clk         ; 1.000        ; 0.000      ; 10.576     ;
+; -9.836  ; clock_devider:washing_machine_clock_devider|counter[30] ; clock_devider:washing_machine_clock_devider|counter[13] ; clk          ; clk         ; 1.000        ; 0.000      ; 10.576     ;
+; -9.836  ; clock_devider:washing_machine_clock_devider|counter[30] ; clock_devider:washing_machine_clock_devider|counter[14] ; clk          ; clk         ; 1.000        ; 0.000      ; 10.576     ;
+; -9.836  ; clock_devider:washing_machine_clock_devider|counter[30] ; clock_devider:washing_machine_clock_devider|counter[15] ; clk          ; clk         ; 1.000        ; 0.000      ; 10.576     ;
+; -9.826  ; clock_devider:sev_seg_clock_devider|counter[24]         ; clock_devider:sev_seg_clock_devider|counter[16]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.566     ;
+; -9.826  ; clock_devider:sev_seg_clock_devider|counter[24]         ; clock_devider:sev_seg_clock_devider|counter[17]         ; clk          ; clk         ; 1.000        ; 0.000      ; 10.566     ;
++---------+---------------------------------------------------------+---------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'clock_devider:washing_machine_clock_devider|curr_out'                                                                                                                                                                                                                     ;
++--------+---------------------------------------------------------+---------------------------------------------------------+------------------------------------------------------+------------------------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                                               ; To Node                                                 ; Launch Clock                                         ; Latch Clock                                          ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------------------------------+---------------------------------------------------------+------------------------------------------------------+------------------------------------------------------+--------------+------------+------------+
+; -8.480 ; washing_machine:washing_machine_driver|wash_counter[3]  ; washing_machine:washing_machine_driver|curr_state[1]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 9.220      ;
+; -8.480 ; washing_machine:washing_machine_driver|wash_counter[3]  ; washing_machine:washing_machine_driver|curr_state[0]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 9.220      ;
+; -8.480 ; washing_machine:washing_machine_driver|wash_counter[3]  ; washing_machine:washing_machine_driver|curr_state[0]~en ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 9.220      ;
+; -8.312 ; washing_machine:washing_machine_driver|wash_counter[1]  ; washing_machine:washing_machine_driver|curr_state[1]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 9.052      ;
+; -8.312 ; washing_machine:washing_machine_driver|wash_counter[1]  ; washing_machine:washing_machine_driver|curr_state[0]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 9.052      ;
+; -8.312 ; washing_machine:washing_machine_driver|wash_counter[1]  ; washing_machine:washing_machine_driver|curr_state[0]~en ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 9.052      ;
+; -8.054 ; washing_machine:washing_machine_driver|curr_state[0]~en ; washing_machine:washing_machine_driver|curr_state[1]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 8.794      ;
+; -8.054 ; washing_machine:washing_machine_driver|curr_state[0]~en ; washing_machine:washing_machine_driver|curr_state[0]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 8.794      ;
+; -8.054 ; washing_machine:washing_machine_driver|curr_state[0]~en ; washing_machine:washing_machine_driver|curr_state[0]~en ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 8.794      ;
+; -8.001 ; washing_machine:washing_machine_driver|SPIN_counter[2]  ; washing_machine:washing_machine_driver|curr_state[1]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 8.741      ;
+; -8.001 ; washing_machine:washing_machine_driver|SPIN_counter[2]  ; washing_machine:washing_machine_driver|curr_state[0]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 8.741      ;
+; -8.001 ; washing_machine:washing_machine_driver|SPIN_counter[2]  ; washing_machine:washing_machine_driver|curr_state[0]~en ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 8.741      ;
+; -7.966 ; washing_machine:washing_machine_driver|RINSE_counter[2] ; washing_machine:washing_machine_driver|curr_state[1]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 8.706      ;
+; -7.966 ; washing_machine:washing_machine_driver|RINSE_counter[2] ; washing_machine:washing_machine_driver|curr_state[0]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 8.706      ;
+; -7.966 ; washing_machine:washing_machine_driver|RINSE_counter[2] ; washing_machine:washing_machine_driver|curr_state[0]~en ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 8.706      ;
+; -7.953 ; washing_machine:washing_machine_driver|wash_counter[4]  ; washing_machine:washing_machine_driver|curr_state[1]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 8.693      ;
+; -7.953 ; washing_machine:washing_machine_driver|wash_counter[4]  ; washing_machine:washing_machine_driver|curr_state[0]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 8.693      ;
+; -7.953 ; washing_machine:washing_machine_driver|wash_counter[4]  ; washing_machine:washing_machine_driver|curr_state[0]~en ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 8.693      ;
+; -7.672 ; washing_machine:washing_machine_driver|SPIN_counter[1]  ; washing_machine:washing_machine_driver|curr_state[1]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 8.412      ;
+; -7.672 ; washing_machine:washing_machine_driver|SPIN_counter[1]  ; washing_machine:washing_machine_driver|curr_state[0]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 8.412      ;
+; -7.672 ; washing_machine:washing_machine_driver|SPIN_counter[1]  ; washing_machine:washing_machine_driver|curr_state[0]~en ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 8.412      ;
+; -7.659 ; washing_machine:washing_machine_driver|RINSE_counter[1] ; washing_machine:washing_machine_driver|curr_state[1]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 8.399      ;
+; -7.659 ; washing_machine:washing_machine_driver|RINSE_counter[1] ; washing_machine:washing_machine_driver|curr_state[0]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 8.399      ;
+; -7.659 ; washing_machine:washing_machine_driver|RINSE_counter[1] ; washing_machine:washing_machine_driver|curr_state[0]~en ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 8.399      ;
+; -7.646 ; washing_machine:washing_machine_driver|SPIN_counter[3]  ; washing_machine:washing_machine_driver|curr_state[1]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 8.386      ;
+; -7.646 ; washing_machine:washing_machine_driver|SPIN_counter[3]  ; washing_machine:washing_machine_driver|curr_state[0]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 8.386      ;
+; -7.646 ; washing_machine:washing_machine_driver|SPIN_counter[3]  ; washing_machine:washing_machine_driver|curr_state[0]~en ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 8.386      ;
+; -7.640 ; washing_machine:washing_machine_driver|RINSE_counter[2] ; washing_machine:washing_machine_driver|RINSE_counter[2] ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 8.380      ;
+; -7.640 ; washing_machine:washing_machine_driver|RINSE_counter[2] ; washing_machine:washing_machine_driver|RINSE_counter[1] ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 8.380      ;
+; -7.615 ; washing_machine:washing_machine_driver|curr_state[1]    ; washing_machine:washing_machine_driver|curr_state[1]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 8.355      ;
+; -7.615 ; washing_machine:washing_machine_driver|curr_state[1]    ; washing_machine:washing_machine_driver|curr_state[0]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 8.355      ;
+; -7.615 ; washing_machine:washing_machine_driver|curr_state[1]    ; washing_machine:washing_machine_driver|curr_state[0]~en ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 8.355      ;
+; -7.573 ; washing_machine:washing_machine_driver|wash_counter[2]  ; washing_machine:washing_machine_driver|curr_state[1]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 8.313      ;
+; -7.573 ; washing_machine:washing_machine_driver|wash_counter[2]  ; washing_machine:washing_machine_driver|curr_state[0]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 8.313      ;
+; -7.573 ; washing_machine:washing_machine_driver|wash_counter[2]  ; washing_machine:washing_machine_driver|curr_state[0]~en ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 8.313      ;
+; -7.541 ; washing_machine:washing_machine_driver|curr_state[0]~en ; washing_machine:washing_machine_driver|RINSE_counter[2] ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 8.281      ;
+; -7.541 ; washing_machine:washing_machine_driver|curr_state[0]~en ; washing_machine:washing_machine_driver|RINSE_counter[1] ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 8.281      ;
+; -7.333 ; washing_machine:washing_machine_driver|RINSE_counter[1] ; washing_machine:washing_machine_driver|RINSE_counter[2] ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 8.073      ;
+; -7.333 ; washing_machine:washing_machine_driver|RINSE_counter[1] ; washing_machine:washing_machine_driver|RINSE_counter[1] ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 8.073      ;
+; -7.261 ; washing_machine:washing_machine_driver|RINSE_counter[2] ; washing_machine:washing_machine_driver|RINSE_counter[3] ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 8.001      ;
+; -7.213 ; washing_machine:washing_machine_driver|RINSE_counter[3] ; washing_machine:washing_machine_driver|curr_state[1]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 7.953      ;
+; -7.213 ; washing_machine:washing_machine_driver|RINSE_counter[3] ; washing_machine:washing_machine_driver|curr_state[0]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 7.953      ;
+; -7.213 ; washing_machine:washing_machine_driver|RINSE_counter[3] ; washing_machine:washing_machine_driver|curr_state[0]~en ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 7.953      ;
+; -7.197 ; washing_machine:washing_machine_driver|RINSE_counter[2] ; washing_machine:washing_machine_driver|RINSE_counter[0] ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 7.937      ;
+; -7.162 ; washing_machine:washing_machine_driver|curr_state[0]~en ; washing_machine:washing_machine_driver|RINSE_counter[3] ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 7.902      ;
+; -7.102 ; washing_machine:washing_machine_driver|curr_state[1]    ; washing_machine:washing_machine_driver|RINSE_counter[2] ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 7.842      ;
+; -7.102 ; washing_machine:washing_machine_driver|curr_state[1]    ; washing_machine:washing_machine_driver|RINSE_counter[1] ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 7.842      ;
+; -7.098 ; washing_machine:washing_machine_driver|curr_state[0]~en ; washing_machine:washing_machine_driver|RINSE_counter[0] ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 7.838      ;
+; -6.954 ; washing_machine:washing_machine_driver|RINSE_counter[1] ; washing_machine:washing_machine_driver|RINSE_counter[3] ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 7.694      ;
+; -6.890 ; washing_machine:washing_machine_driver|RINSE_counter[1] ; washing_machine:washing_machine_driver|RINSE_counter[0] ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 7.630      ;
+; -6.887 ; washing_machine:washing_machine_driver|RINSE_counter[3] ; washing_machine:washing_machine_driver|RINSE_counter[2] ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 7.627      ;
+; -6.887 ; washing_machine:washing_machine_driver|RINSE_counter[3] ; washing_machine:washing_machine_driver|RINSE_counter[1] ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 7.627      ;
+; -6.789 ; washing_machine:washing_machine_driver|curr_state[0]    ; washing_machine:washing_machine_driver|RINSE_counter[2] ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 7.529      ;
+; -6.789 ; washing_machine:washing_machine_driver|curr_state[0]    ; washing_machine:washing_machine_driver|RINSE_counter[1] ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 7.529      ;
+; -6.723 ; washing_machine:washing_machine_driver|curr_state[1]    ; washing_machine:washing_machine_driver|RINSE_counter[3] ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 7.463      ;
+; -6.665 ; washing_machine:washing_machine_driver|SPIN_counter[2]  ; washing_machine:washing_machine_driver|SPIN_counter[1]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 7.405      ;
+; -6.659 ; washing_machine:washing_machine_driver|curr_state[1]    ; washing_machine:washing_machine_driver|RINSE_counter[0] ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 7.399      ;
+; -6.603 ; washing_machine:washing_machine_driver|curr_state[0]    ; washing_machine:washing_machine_driver|curr_state[1]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 7.343      ;
+; -6.603 ; washing_machine:washing_machine_driver|curr_state[0]    ; washing_machine:washing_machine_driver|curr_state[0]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 7.343      ;
+; -6.603 ; washing_machine:washing_machine_driver|curr_state[0]    ; washing_machine:washing_machine_driver|curr_state[0]~en ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 7.343      ;
+; -6.560 ; washing_machine:washing_machine_driver|curr_state[1]    ; washing_machine:washing_machine_driver|wash_counter[0]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 7.300      ;
+; -6.560 ; washing_machine:washing_machine_driver|curr_state[1]    ; washing_machine:washing_machine_driver|wash_counter[4]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 7.300      ;
+; -6.560 ; washing_machine:washing_machine_driver|curr_state[1]    ; washing_machine:washing_machine_driver|wash_counter[3]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 7.300      ;
+; -6.560 ; washing_machine:washing_machine_driver|curr_state[1]    ; washing_machine:washing_machine_driver|wash_counter[2]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 7.300      ;
+; -6.560 ; washing_machine:washing_machine_driver|curr_state[1]    ; washing_machine:washing_machine_driver|wash_counter[1]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 7.300      ;
+; -6.508 ; washing_machine:washing_machine_driver|RINSE_counter[3] ; washing_machine:washing_machine_driver|RINSE_counter[3] ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 7.248      ;
+; -6.444 ; washing_machine:washing_machine_driver|RINSE_counter[3] ; washing_machine:washing_machine_driver|RINSE_counter[0] ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 7.184      ;
+; -6.410 ; washing_machine:washing_machine_driver|curr_state[0]    ; washing_machine:washing_machine_driver|RINSE_counter[3] ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 7.150      ;
+; -6.394 ; washing_machine:washing_machine_driver|curr_state[0]~en ; washing_machine:washing_machine_driver|wash_counter[0]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 7.134      ;
+; -6.394 ; washing_machine:washing_machine_driver|curr_state[0]~en ; washing_machine:washing_machine_driver|wash_counter[4]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 7.134      ;
+; -6.394 ; washing_machine:washing_machine_driver|curr_state[0]~en ; washing_machine:washing_machine_driver|wash_counter[3]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 7.134      ;
+; -6.394 ; washing_machine:washing_machine_driver|curr_state[0]~en ; washing_machine:washing_machine_driver|wash_counter[2]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 7.134      ;
+; -6.394 ; washing_machine:washing_machine_driver|curr_state[0]~en ; washing_machine:washing_machine_driver|wash_counter[1]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 7.134      ;
+; -6.346 ; washing_machine:washing_machine_driver|curr_state[0]    ; washing_machine:washing_machine_driver|RINSE_counter[0] ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 7.086      ;
+; -6.336 ; washing_machine:washing_machine_driver|SPIN_counter[1]  ; washing_machine:washing_machine_driver|SPIN_counter[1]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 7.076      ;
+; -6.310 ; washing_machine:washing_machine_driver|SPIN_counter[3]  ; washing_machine:washing_machine_driver|SPIN_counter[1]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 7.050      ;
+; -6.268 ; washing_machine:washing_machine_driver|SPIN_counter[2]  ; washing_machine:washing_machine_driver|SPIN_counter[0]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 7.008      ;
+; -6.268 ; washing_machine:washing_machine_driver|SPIN_counter[2]  ; washing_machine:washing_machine_driver|SPIN_counter[3]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 7.008      ;
+; -6.268 ; washing_machine:washing_machine_driver|SPIN_counter[2]  ; washing_machine:washing_machine_driver|SPIN_counter[2]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 7.008      ;
+; -6.152 ; washing_machine:washing_machine_driver|curr_state[0]~en ; washing_machine:washing_machine_driver|SPIN_counter[1]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 6.892      ;
+; -5.939 ; washing_machine:washing_machine_driver|SPIN_counter[1]  ; washing_machine:washing_machine_driver|SPIN_counter[0]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 6.679      ;
+; -5.939 ; washing_machine:washing_machine_driver|SPIN_counter[1]  ; washing_machine:washing_machine_driver|SPIN_counter[3]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 6.679      ;
+; -5.939 ; washing_machine:washing_machine_driver|SPIN_counter[1]  ; washing_machine:washing_machine_driver|SPIN_counter[2]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 6.679      ;
+; -5.913 ; washing_machine:washing_machine_driver|SPIN_counter[3]  ; washing_machine:washing_machine_driver|SPIN_counter[0]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 6.653      ;
+; -5.913 ; washing_machine:washing_machine_driver|SPIN_counter[3]  ; washing_machine:washing_machine_driver|SPIN_counter[3]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 6.653      ;
+; -5.913 ; washing_machine:washing_machine_driver|SPIN_counter[3]  ; washing_machine:washing_machine_driver|SPIN_counter[2]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 6.653      ;
+; -5.899 ; washing_machine:washing_machine_driver|wash_counter[3]  ; washing_machine:washing_machine_driver|wash_counter[0]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 6.639      ;
+; -5.899 ; washing_machine:washing_machine_driver|wash_counter[3]  ; washing_machine:washing_machine_driver|wash_counter[4]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 6.639      ;
+; -5.899 ; washing_machine:washing_machine_driver|wash_counter[3]  ; washing_machine:washing_machine_driver|wash_counter[3]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 6.639      ;
+; -5.899 ; washing_machine:washing_machine_driver|wash_counter[3]  ; washing_machine:washing_machine_driver|wash_counter[2]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 6.639      ;
+; -5.899 ; washing_machine:washing_machine_driver|wash_counter[3]  ; washing_machine:washing_machine_driver|wash_counter[1]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 6.639      ;
+; -5.824 ; washing_machine:washing_machine_driver|SPIN_counter[0]  ; washing_machine:washing_machine_driver|SPIN_counter[3]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 6.564      ;
+; -5.755 ; washing_machine:washing_machine_driver|curr_state[0]~en ; washing_machine:washing_machine_driver|SPIN_counter[0]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 6.495      ;
+; -5.755 ; washing_machine:washing_machine_driver|curr_state[0]~en ; washing_machine:washing_machine_driver|SPIN_counter[3]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 6.495      ;
+; -5.755 ; washing_machine:washing_machine_driver|curr_state[0]~en ; washing_machine:washing_machine_driver|SPIN_counter[2]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 6.495      ;
+; -5.731 ; washing_machine:washing_machine_driver|wash_counter[1]  ; washing_machine:washing_machine_driver|wash_counter[0]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 6.471      ;
+; -5.731 ; washing_machine:washing_machine_driver|wash_counter[1]  ; washing_machine:washing_machine_driver|wash_counter[4]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 6.471      ;
+; -5.731 ; washing_machine:washing_machine_driver|wash_counter[1]  ; washing_machine:washing_machine_driver|wash_counter[3]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 6.471      ;
+; -5.731 ; washing_machine:washing_machine_driver|wash_counter[1]  ; washing_machine:washing_machine_driver|wash_counter[2]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 6.471      ;
+; -5.731 ; washing_machine:washing_machine_driver|wash_counter[1]  ; washing_machine:washing_machine_driver|wash_counter[1]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 1.000        ; 0.000      ; 6.471      ;
++--------+---------------------------------------------------------+---------------------------------------------------------+------------------------------------------------------+------------------------------------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'clock_devider:sev_seg_clock_devider|curr_out'                                                                                                                                                                                             ;
++--------+-------------------------------------------------+-------------------------------------------------+----------------------------------------------+----------------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                                       ; To Node                                         ; Launch Clock                                 ; Latch Clock                                  ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------------------------+-------------------------------------------------+----------------------------------------------+----------------------------------------------+--------------+------------+------------+
+; -2.161 ; seven_segment:sev_segment_driver|sevSegIndex[2] ; seven_segment:sev_segment_driver|sevSegIndex[1] ; clock_devider:sev_seg_clock_devider|curr_out ; clock_devider:sev_seg_clock_devider|curr_out ; 1.000        ; 0.000      ; 2.901      ;
+; -2.157 ; seven_segment:sev_segment_driver|sevSegIndex[2] ; seven_segment:sev_segment_driver|sevSegIndex[2] ; clock_devider:sev_seg_clock_devider|curr_out ; clock_devider:sev_seg_clock_devider|curr_out ; 1.000        ; 0.000      ; 2.897      ;
+; -1.723 ; seven_segment:sev_segment_driver|sevSegIndex[0] ; seven_segment:sev_segment_driver|sevSegIndex[0] ; clock_devider:sev_seg_clock_devider|curr_out ; clock_devider:sev_seg_clock_devider|curr_out ; 1.000        ; 0.000      ; 2.463      ;
+; -1.605 ; seven_segment:sev_segment_driver|sevSegIndex[0] ; seven_segment:sev_segment_driver|sevSegIndex[1] ; clock_devider:sev_seg_clock_devider|curr_out ; clock_devider:sev_seg_clock_devider|curr_out ; 1.000        ; 0.000      ; 2.345      ;
+; -1.604 ; seven_segment:sev_segment_driver|sevSegIndex[0] ; seven_segment:sev_segment_driver|sevSegIndex[2] ; clock_devider:sev_seg_clock_devider|curr_out ; clock_devider:sev_seg_clock_devider|curr_out ; 1.000        ; 0.000      ; 2.344      ;
+; -1.353 ; seven_segment:sev_segment_driver|sevSegIndex[1] ; seven_segment:sev_segment_driver|sevSegIndex[2] ; clock_devider:sev_seg_clock_devider|curr_out ; clock_devider:sev_seg_clock_devider|curr_out ; 1.000        ; 0.000      ; 2.093      ;
+; -1.349 ; seven_segment:sev_segment_driver|sevSegIndex[1] ; seven_segment:sev_segment_driver|sevSegIndex[1] ; clock_devider:sev_seg_clock_devider|curr_out ; clock_devider:sev_seg_clock_devider|curr_out ; 1.000        ; 0.000      ; 2.089      ;
++--------+-------------------------------------------------+-------------------------------------------------+----------------------------------------------+----------------------------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clk'                                                                                                                                                                                                                              ;
++--------+---------------------------------------------------------+---------------------------------------------------------+------------------------------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                               ; To Node                                                 ; Launch Clock                                         ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------------------------------+---------------------------------------------------------+------------------------------------------------------+-------------+--------------+------------+------------+
+; -1.839 ; clock_devider:washing_machine_clock_devider|curr_out    ; clock_devider:washing_machine_clock_devider|curr_out    ; clock_devider:washing_machine_clock_devider|curr_out ; clk         ; 0.000        ; 3.716      ; 2.331      ;
+; -1.339 ; clock_devider:washing_machine_clock_devider|curr_out    ; clock_devider:washing_machine_clock_devider|curr_out    ; clock_devider:washing_machine_clock_devider|curr_out ; clk         ; -0.500       ; 3.716      ; 2.331      ;
+; -1.148 ; clock_devider:sev_seg_clock_devider|curr_out            ; clock_devider:sev_seg_clock_devider|curr_out            ; clock_devider:sev_seg_clock_devider|curr_out         ; clk         ; 0.000        ; 3.716      ; 3.022      ;
+; -0.648 ; clock_devider:sev_seg_clock_devider|curr_out            ; clock_devider:sev_seg_clock_devider|curr_out            ; clock_devider:sev_seg_clock_devider|curr_out         ; clk         ; -0.500       ; 3.716      ; 3.022      ;
+; 2.803  ; clock_devider:washing_machine_clock_devider|counter[5]  ; clock_devider:washing_machine_clock_devider|counter[5]  ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 2.877      ;
+; 2.803  ; clock_devider:sev_seg_clock_devider|counter[5]          ; clock_devider:sev_seg_clock_devider|counter[5]          ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 2.877      ;
+; 2.804  ; clock_devider:washing_machine_clock_devider|counter[3]  ; clock_devider:washing_machine_clock_devider|counter[3]  ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 2.878      ;
+; 2.812  ; clock_devider:washing_machine_clock_devider|counter[16] ; clock_devider:washing_machine_clock_devider|counter[16] ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 2.886      ;
+; 2.812  ; clock_devider:sev_seg_clock_devider|counter[6]          ; clock_devider:sev_seg_clock_devider|counter[6]          ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 2.886      ;
+; 2.812  ; clock_devider:sev_seg_clock_devider|counter[16]         ; clock_devider:sev_seg_clock_devider|counter[16]         ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 2.886      ;
+; 2.813  ; clock_devider:washing_machine_clock_devider|counter[23] ; clock_devider:washing_machine_clock_devider|counter[23] ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 2.887      ;
+; 2.813  ; clock_devider:sev_seg_clock_devider|counter[13]         ; clock_devider:sev_seg_clock_devider|counter[13]         ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 2.887      ;
+; 2.813  ; clock_devider:sev_seg_clock_devider|counter[23]         ; clock_devider:sev_seg_clock_devider|counter[23]         ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 2.887      ;
+; 2.822  ; clock_devider:washing_machine_clock_devider|counter[6]  ; clock_devider:washing_machine_clock_devider|counter[6]  ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 2.896      ;
+; 2.822  ; clock_devider:washing_machine_clock_devider|counter[7]  ; clock_devider:washing_machine_clock_devider|counter[7]  ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 2.896      ;
+; 2.822  ; clock_devider:washing_machine_clock_devider|counter[17] ; clock_devider:washing_machine_clock_devider|counter[17] ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 2.896      ;
+; 2.822  ; clock_devider:sev_seg_clock_devider|counter[7]          ; clock_devider:sev_seg_clock_devider|counter[7]          ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 2.896      ;
+; 2.822  ; clock_devider:sev_seg_clock_devider|counter[17]         ; clock_devider:sev_seg_clock_devider|counter[17]         ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 2.896      ;
+; 2.823  ; clock_devider:washing_machine_clock_devider|counter[8]  ; clock_devider:washing_machine_clock_devider|counter[8]  ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 2.897      ;
+; 2.823  ; clock_devider:washing_machine_clock_devider|counter[15] ; clock_devider:washing_machine_clock_devider|counter[15] ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 2.897      ;
+; 2.823  ; clock_devider:washing_machine_clock_devider|counter[18] ; clock_devider:washing_machine_clock_devider|counter[18] ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 2.897      ;
+; 2.823  ; clock_devider:washing_machine_clock_devider|counter[28] ; clock_devider:washing_machine_clock_devider|counter[28] ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 2.897      ;
+; 2.823  ; clock_devider:washing_machine_clock_devider|counter[25] ; clock_devider:washing_machine_clock_devider|counter[25] ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 2.897      ;
+; 2.823  ; clock_devider:sev_seg_clock_devider|counter[8]          ; clock_devider:sev_seg_clock_devider|counter[8]          ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 2.897      ;
+; 2.823  ; clock_devider:sev_seg_clock_devider|counter[15]         ; clock_devider:sev_seg_clock_devider|counter[15]         ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 2.897      ;
+; 2.823  ; clock_devider:sev_seg_clock_devider|counter[18]         ; clock_devider:sev_seg_clock_devider|counter[18]         ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 2.897      ;
+; 2.823  ; clock_devider:sev_seg_clock_devider|counter[25]         ; clock_devider:sev_seg_clock_devider|counter[25]         ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 2.897      ;
+; 2.824  ; clock_devider:washing_machine_clock_devider|counter[13] ; clock_devider:washing_machine_clock_devider|counter[13] ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 2.898      ;
+; 2.824  ; clock_devider:sev_seg_clock_devider|counter[3]          ; clock_devider:sev_seg_clock_devider|counter[3]          ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 2.898      ;
+; 2.833  ; clock_devider:washing_machine_clock_devider|counter[27] ; clock_devider:washing_machine_clock_devider|counter[27] ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 2.907      ;
+; 2.833  ; clock_devider:sev_seg_clock_devider|counter[26]         ; clock_devider:sev_seg_clock_devider|counter[26]         ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 2.907      ;
+; 2.841  ; clock_devider:sev_seg_clock_devider|counter[27]         ; clock_devider:sev_seg_clock_devider|counter[27]         ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 2.915      ;
+; 2.842  ; clock_devider:sev_seg_clock_devider|counter[28]         ; clock_devider:sev_seg_clock_devider|counter[28]         ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 2.916      ;
+; 2.928  ; clock_devider:washing_machine_clock_devider|counter[4]  ; clock_devider:washing_machine_clock_devider|counter[4]  ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.002      ;
+; 2.928  ; clock_devider:sev_seg_clock_devider|counter[4]          ; clock_devider:sev_seg_clock_devider|counter[4]          ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.002      ;
+; 2.938  ; clock_devider:washing_machine_clock_devider|counter[9]  ; clock_devider:washing_machine_clock_devider|counter[9]  ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.012      ;
+; 2.938  ; clock_devider:washing_machine_clock_devider|counter[14] ; clock_devider:washing_machine_clock_devider|counter[14] ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.012      ;
+; 2.938  ; clock_devider:washing_machine_clock_devider|counter[19] ; clock_devider:washing_machine_clock_devider|counter[19] ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.012      ;
+; 2.938  ; clock_devider:washing_machine_clock_devider|counter[24] ; clock_devider:washing_machine_clock_devider|counter[24] ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.012      ;
+; 2.938  ; clock_devider:sev_seg_clock_devider|counter[9]          ; clock_devider:sev_seg_clock_devider|counter[9]          ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.012      ;
+; 2.938  ; clock_devider:sev_seg_clock_devider|counter[14]         ; clock_devider:sev_seg_clock_devider|counter[14]         ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.012      ;
+; 2.938  ; clock_devider:sev_seg_clock_devider|counter[19]         ; clock_devider:sev_seg_clock_devider|counter[19]         ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.012      ;
+; 2.938  ; clock_devider:sev_seg_clock_devider|counter[24]         ; clock_devider:sev_seg_clock_devider|counter[24]         ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.012      ;
+; 2.948  ; clock_devider:washing_machine_clock_devider|counter[31] ; clock_devider:washing_machine_clock_devider|counter[31] ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.022      ;
+; 2.948  ; clock_devider:washing_machine_clock_devider|counter[11] ; clock_devider:washing_machine_clock_devider|counter[11] ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.022      ;
+; 2.948  ; clock_devider:washing_machine_clock_devider|counter[21] ; clock_devider:washing_machine_clock_devider|counter[21] ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.022      ;
+; 2.948  ; clock_devider:sev_seg_clock_devider|counter[31]         ; clock_devider:sev_seg_clock_devider|counter[31]         ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.022      ;
+; 2.948  ; clock_devider:sev_seg_clock_devider|counter[11]         ; clock_devider:sev_seg_clock_devider|counter[11]         ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.022      ;
+; 2.948  ; clock_devider:sev_seg_clock_devider|counter[21]         ; clock_devider:sev_seg_clock_devider|counter[21]         ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.022      ;
+; 2.948  ; clock_devider:washing_machine_clock_devider|counter[1]  ; clock_devider:washing_machine_clock_devider|counter[1]  ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.022      ;
+; 2.949  ; clock_devider:washing_machine_clock_devider|counter[10] ; clock_devider:washing_machine_clock_devider|counter[10] ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.023      ;
+; 2.949  ; clock_devider:washing_machine_clock_devider|counter[12] ; clock_devider:washing_machine_clock_devider|counter[12] ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.023      ;
+; 2.949  ; clock_devider:washing_machine_clock_devider|counter[20] ; clock_devider:washing_machine_clock_devider|counter[20] ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.023      ;
+; 2.949  ; clock_devider:washing_machine_clock_devider|counter[22] ; clock_devider:washing_machine_clock_devider|counter[22] ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.023      ;
+; 2.949  ; clock_devider:sev_seg_clock_devider|counter[10]         ; clock_devider:sev_seg_clock_devider|counter[10]         ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.023      ;
+; 2.949  ; clock_devider:sev_seg_clock_devider|counter[12]         ; clock_devider:sev_seg_clock_devider|counter[12]         ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.023      ;
+; 2.949  ; clock_devider:sev_seg_clock_devider|counter[20]         ; clock_devider:sev_seg_clock_devider|counter[20]         ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.023      ;
+; 2.949  ; clock_devider:sev_seg_clock_devider|counter[22]         ; clock_devider:sev_seg_clock_devider|counter[22]         ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.023      ;
+; 2.949  ; clock_devider:washing_machine_clock_devider|counter[2]  ; clock_devider:washing_machine_clock_devider|counter[2]  ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.023      ;
+; 2.949  ; clock_devider:washing_machine_clock_devider|counter[0]  ; clock_devider:washing_machine_clock_devider|counter[0]  ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.023      ;
+; 2.959  ; clock_devider:washing_machine_clock_devider|counter[30] ; clock_devider:washing_machine_clock_devider|counter[30] ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.033      ;
+; 2.959  ; clock_devider:sev_seg_clock_devider|counter[30]         ; clock_devider:sev_seg_clock_devider|counter[30]         ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.033      ;
+; 2.964  ; clock_devider:sev_seg_clock_devider|counter[2]          ; clock_devider:sev_seg_clock_devider|counter[2]          ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.038      ;
+; 2.966  ; clock_devider:sev_seg_clock_devider|counter[29]         ; clock_devider:sev_seg_clock_devider|counter[29]         ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.040      ;
+; 2.969  ; clock_devider:washing_machine_clock_devider|counter[29] ; clock_devider:washing_machine_clock_devider|counter[29] ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.043      ;
+; 2.972  ; clock_devider:sev_seg_clock_devider|counter[1]          ; clock_devider:sev_seg_clock_devider|counter[1]          ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.046      ;
+; 2.975  ; clock_devider:sev_seg_clock_devider|counter[0]          ; clock_devider:sev_seg_clock_devider|counter[0]          ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.049      ;
+; 3.256  ; clock_devider:washing_machine_clock_devider|counter[26] ; clock_devider:washing_machine_clock_devider|counter[26] ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.330      ;
+; 3.525  ; clock_devider:washing_machine_clock_devider|counter[3]  ; clock_devider:washing_machine_clock_devider|counter[4]  ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.599      ;
+; 3.533  ; clock_devider:washing_machine_clock_devider|counter[16] ; clock_devider:washing_machine_clock_devider|counter[17] ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.607      ;
+; 3.533  ; clock_devider:sev_seg_clock_devider|counter[6]          ; clock_devider:sev_seg_clock_devider|counter[7]          ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.607      ;
+; 3.533  ; clock_devider:sev_seg_clock_devider|counter[16]         ; clock_devider:sev_seg_clock_devider|counter[17]         ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.607      ;
+; 3.534  ; clock_devider:washing_machine_clock_devider|counter[23] ; clock_devider:washing_machine_clock_devider|counter[24] ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.608      ;
+; 3.534  ; clock_devider:sev_seg_clock_devider|counter[13]         ; clock_devider:sev_seg_clock_devider|counter[14]         ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.608      ;
+; 3.534  ; clock_devider:sev_seg_clock_devider|counter[23]         ; clock_devider:sev_seg_clock_devider|counter[24]         ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.608      ;
+; 3.543  ; clock_devider:washing_machine_clock_devider|counter[6]  ; clock_devider:washing_machine_clock_devider|counter[7]  ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.617      ;
+; 3.543  ; clock_devider:washing_machine_clock_devider|counter[7]  ; clock_devider:washing_machine_clock_devider|counter[8]  ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.617      ;
+; 3.543  ; clock_devider:washing_machine_clock_devider|counter[17] ; clock_devider:washing_machine_clock_devider|counter[18] ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.617      ;
+; 3.543  ; clock_devider:sev_seg_clock_devider|counter[7]          ; clock_devider:sev_seg_clock_devider|counter[8]          ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.617      ;
+; 3.543  ; clock_devider:sev_seg_clock_devider|counter[17]         ; clock_devider:sev_seg_clock_devider|counter[18]         ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.617      ;
+; 3.544  ; clock_devider:washing_machine_clock_devider|counter[8]  ; clock_devider:washing_machine_clock_devider|counter[9]  ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.618      ;
+; 3.544  ; clock_devider:washing_machine_clock_devider|counter[18] ; clock_devider:washing_machine_clock_devider|counter[19] ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.618      ;
+; 3.544  ; clock_devider:washing_machine_clock_devider|counter[28] ; clock_devider:washing_machine_clock_devider|counter[29] ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.618      ;
+; 3.544  ; clock_devider:sev_seg_clock_devider|counter[8]          ; clock_devider:sev_seg_clock_devider|counter[9]          ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.618      ;
+; 3.544  ; clock_devider:sev_seg_clock_devider|counter[18]         ; clock_devider:sev_seg_clock_devider|counter[19]         ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.618      ;
+; 3.545  ; clock_devider:washing_machine_clock_devider|counter[13] ; clock_devider:washing_machine_clock_devider|counter[14] ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.619      ;
+; 3.545  ; clock_devider:sev_seg_clock_devider|counter[3]          ; clock_devider:sev_seg_clock_devider|counter[4]          ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.619      ;
+; 3.554  ; clock_devider:washing_machine_clock_devider|counter[27] ; clock_devider:washing_machine_clock_devider|counter[28] ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.628      ;
+; 3.554  ; clock_devider:sev_seg_clock_devider|counter[26]         ; clock_devider:sev_seg_clock_devider|counter[27]         ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.628      ;
+; 3.562  ; clock_devider:sev_seg_clock_devider|counter[27]         ; clock_devider:sev_seg_clock_devider|counter[28]         ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.636      ;
+; 3.563  ; clock_devider:sev_seg_clock_devider|counter[28]         ; clock_devider:sev_seg_clock_devider|counter[29]         ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.637      ;
+; 3.638  ; clock_devider:washing_machine_clock_devider|counter[3]  ; clock_devider:washing_machine_clock_devider|counter[5]  ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.712      ;
+; 3.646  ; clock_devider:washing_machine_clock_devider|counter[16] ; clock_devider:washing_machine_clock_devider|counter[18] ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.720      ;
+; 3.646  ; clock_devider:sev_seg_clock_devider|counter[6]          ; clock_devider:sev_seg_clock_devider|counter[8]          ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.720      ;
+; 3.646  ; clock_devider:sev_seg_clock_devider|counter[16]         ; clock_devider:sev_seg_clock_devider|counter[18]         ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.720      ;
+; 3.647  ; clock_devider:washing_machine_clock_devider|counter[23] ; clock_devider:washing_machine_clock_devider|counter[25] ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.721      ;
+; 3.647  ; clock_devider:sev_seg_clock_devider|counter[13]         ; clock_devider:sev_seg_clock_devider|counter[15]         ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.721      ;
+; 3.647  ; clock_devider:sev_seg_clock_devider|counter[23]         ; clock_devider:sev_seg_clock_devider|counter[25]         ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.721      ;
+; 3.656  ; clock_devider:washing_machine_clock_devider|counter[6]  ; clock_devider:washing_machine_clock_devider|counter[8]  ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.730      ;
+; 3.656  ; clock_devider:washing_machine_clock_devider|counter[7]  ; clock_devider:washing_machine_clock_devider|counter[9]  ; clk                                                  ; clk         ; 0.000        ; 0.000      ; 3.730      ;
++--------+---------------------------------------------------------+---------------------------------------------------------+------------------------------------------------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clock_devider:washing_machine_clock_devider|curr_out'                                                                                                                                                                                                                     ;
++-------+---------------------------------------------------------+---------------------------------------------------------+------------------------------------------------------+------------------------------------------------------+--------------+------------+------------+
+; Slack ; From Node                                               ; To Node                                                 ; Launch Clock                                         ; Latch Clock                                          ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------------------------+---------------------------------------------------------+------------------------------------------------------+------------------------------------------------------+--------------+------------+------------+
+; 1.798 ; washing_machine:washing_machine_driver|RINSE_counter[1] ; washing_machine:washing_machine_driver|RINSE_counter[1] ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 1.872      ;
+; 1.812 ; washing_machine:washing_machine_driver|SPIN_counter[3]  ; washing_machine:washing_machine_driver|SPIN_counter[3]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 1.886      ;
+; 1.816 ; washing_machine:washing_machine_driver|SPIN_counter[2]  ; washing_machine:washing_machine_driver|SPIN_counter[2]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 1.890      ;
+; 2.389 ; washing_machine:washing_machine_driver|wash_counter[4]  ; washing_machine:washing_machine_driver|wash_counter[4]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 2.463      ;
+; 2.823 ; washing_machine:washing_machine_driver|wash_counter[0]  ; washing_machine:washing_machine_driver|wash_counter[0]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 2.897      ;
+; 2.842 ; washing_machine:washing_machine_driver|wash_counter[1]  ; washing_machine:washing_machine_driver|wash_counter[1]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 2.916      ;
+; 2.843 ; washing_machine:washing_machine_driver|SPIN_counter[0]  ; washing_machine:washing_machine_driver|SPIN_counter[0]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 2.917      ;
+; 2.845 ; washing_machine:washing_machine_driver|wash_counter[2]  ; washing_machine:washing_machine_driver|wash_counter[2]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 2.919      ;
+; 2.949 ; washing_machine:washing_machine_driver|wash_counter[3]  ; washing_machine:washing_machine_driver|wash_counter[3]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 3.023      ;
+; 2.961 ; washing_machine:washing_machine_driver|RINSE_counter[3] ; washing_machine:washing_machine_driver|RINSE_counter[3] ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 3.035      ;
+; 3.038 ; washing_machine:washing_machine_driver|SPIN_counter[1]  ; washing_machine:washing_machine_driver|SPIN_counter[1]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 3.112      ;
+; 3.095 ; washing_machine:washing_machine_driver|RINSE_counter[2] ; washing_machine:washing_machine_driver|RINSE_counter[2] ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 3.169      ;
+; 3.510 ; washing_machine:washing_machine_driver|RINSE_counter[2] ; washing_machine:washing_machine_driver|RINSE_counter[3] ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 3.584      ;
+; 3.544 ; washing_machine:washing_machine_driver|wash_counter[0]  ; washing_machine:washing_machine_driver|wash_counter[1]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 3.618      ;
+; 3.563 ; washing_machine:washing_machine_driver|wash_counter[1]  ; washing_machine:washing_machine_driver|wash_counter[2]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 3.637      ;
+; 3.566 ; washing_machine:washing_machine_driver|wash_counter[2]  ; washing_machine:washing_machine_driver|wash_counter[3]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 3.640      ;
+; 3.657 ; washing_machine:washing_machine_driver|wash_counter[0]  ; washing_machine:washing_machine_driver|wash_counter[2]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 3.731      ;
+; 3.676 ; washing_machine:washing_machine_driver|wash_counter[1]  ; washing_machine:washing_machine_driver|wash_counter[3]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 3.750      ;
+; 3.679 ; washing_machine:washing_machine_driver|wash_counter[2]  ; washing_machine:washing_machine_driver|wash_counter[4]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 3.753      ;
+; 3.720 ; washing_machine:washing_machine_driver|SPIN_counter[1]  ; washing_machine:washing_machine_driver|SPIN_counter[2]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 3.794      ;
+; 3.770 ; washing_machine:washing_machine_driver|wash_counter[0]  ; washing_machine:washing_machine_driver|wash_counter[3]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 3.844      ;
+; 3.789 ; washing_machine:washing_machine_driver|wash_counter[1]  ; washing_machine:washing_machine_driver|wash_counter[4]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 3.863      ;
+; 3.814 ; washing_machine:washing_machine_driver|wash_counter[3]  ; washing_machine:washing_machine_driver|wash_counter[4]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 3.888      ;
+; 3.883 ; washing_machine:washing_machine_driver|wash_counter[0]  ; washing_machine:washing_machine_driver|wash_counter[4]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 3.957      ;
+; 3.974 ; washing_machine:washing_machine_driver|SPIN_counter[0]  ; washing_machine:washing_machine_driver|SPIN_counter[2]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 4.048      ;
+; 4.006 ; washing_machine:washing_machine_driver|SPIN_counter[0]  ; washing_machine:washing_machine_driver|SPIN_counter[1]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 4.080      ;
+; 4.295 ; washing_machine:washing_machine_driver|RINSE_counter[1] ; washing_machine:washing_machine_driver|RINSE_counter[3] ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 4.369      ;
+; 4.529 ; washing_machine:washing_machine_driver|curr_state[1]    ; washing_machine:washing_machine_driver|curr_state[1]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 4.603      ;
+; 4.531 ; washing_machine:washing_machine_driver|curr_state[1]    ; washing_machine:washing_machine_driver|curr_state[0]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 4.605      ;
+; 4.560 ; washing_machine:washing_machine_driver|curr_state[0]    ; washing_machine:washing_machine_driver|curr_state[0]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 4.634      ;
+; 4.567 ; washing_machine:washing_machine_driver|curr_state[0]    ; washing_machine:washing_machine_driver|curr_state[1]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 4.641      ;
+; 4.571 ; washing_machine:washing_machine_driver|RINSE_counter[0] ; washing_machine:washing_machine_driver|RINSE_counter[0] ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 4.645      ;
+; 4.619 ; washing_machine:washing_machine_driver|SPIN_counter[2]  ; washing_machine:washing_machine_driver|SPIN_counter[3]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 4.693      ;
+; 4.640 ; washing_machine:washing_machine_driver|SPIN_counter[1]  ; washing_machine:washing_machine_driver|SPIN_counter[3]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 4.714      ;
+; 4.728 ; washing_machine:washing_machine_driver|curr_state[0]~en ; washing_machine:washing_machine_driver|curr_state[1]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 4.802      ;
+; 4.730 ; washing_machine:washing_machine_driver|curr_state[0]~en ; washing_machine:washing_machine_driver|curr_state[0]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 4.804      ;
+; 4.951 ; washing_machine:washing_machine_driver|RINSE_counter[1] ; washing_machine:washing_machine_driver|RINSE_counter[2] ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 5.025      ;
+; 5.172 ; washing_machine:washing_machine_driver|RINSE_counter[0] ; washing_machine:washing_machine_driver|RINSE_counter[3] ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 5.246      ;
+; 5.644 ; washing_machine:washing_machine_driver|curr_state[1]    ; washing_machine:washing_machine_driver|SPIN_counter[0]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 5.718      ;
+; 5.644 ; washing_machine:washing_machine_driver|curr_state[1]    ; washing_machine:washing_machine_driver|SPIN_counter[3]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 5.718      ;
+; 5.644 ; washing_machine:washing_machine_driver|curr_state[1]    ; washing_machine:washing_machine_driver|SPIN_counter[2]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 5.718      ;
+; 5.658 ; washing_machine:washing_machine_driver|wash_counter[2]  ; washing_machine:washing_machine_driver|wash_counter[0]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 5.732      ;
+; 5.658 ; washing_machine:washing_machine_driver|wash_counter[2]  ; washing_machine:washing_machine_driver|wash_counter[1]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 5.732      ;
+; 5.808 ; washing_machine:washing_machine_driver|RINSE_counter[0] ; washing_machine:washing_machine_driver|RINSE_counter[1] ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 5.882      ;
+; 5.828 ; washing_machine:washing_machine_driver|RINSE_counter[0] ; washing_machine:washing_machine_driver|RINSE_counter[2] ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 5.902      ;
+; 5.849 ; washing_machine:washing_machine_driver|RINSE_counter[3] ; washing_machine:washing_machine_driver|curr_state[1]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 5.923      ;
+; 5.851 ; washing_machine:washing_machine_driver|RINSE_counter[3] ; washing_machine:washing_machine_driver|curr_state[0]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 5.925      ;
+; 5.921 ; washing_machine:washing_machine_driver|curr_state[0]    ; washing_machine:washing_machine_driver|SPIN_counter[0]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 5.995      ;
+; 5.921 ; washing_machine:washing_machine_driver|curr_state[0]    ; washing_machine:washing_machine_driver|SPIN_counter[3]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 5.995      ;
+; 5.921 ; washing_machine:washing_machine_driver|curr_state[0]    ; washing_machine:washing_machine_driver|SPIN_counter[2]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 5.995      ;
+; 6.038 ; washing_machine:washing_machine_driver|wash_counter[4]  ; washing_machine:washing_machine_driver|wash_counter[0]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.112      ;
+; 6.038 ; washing_machine:washing_machine_driver|wash_counter[4]  ; washing_machine:washing_machine_driver|wash_counter[3]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.112      ;
+; 6.038 ; washing_machine:washing_machine_driver|wash_counter[4]  ; washing_machine:washing_machine_driver|wash_counter[2]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.112      ;
+; 6.038 ; washing_machine:washing_machine_driver|wash_counter[4]  ; washing_machine:washing_machine_driver|wash_counter[1]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.112      ;
+; 6.041 ; washing_machine:washing_machine_driver|curr_state[1]    ; washing_machine:washing_machine_driver|SPIN_counter[1]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.115      ;
+; 6.091 ; washing_machine:washing_machine_driver|curr_state[0]    ; washing_machine:washing_machine_driver|wash_counter[0]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.165      ;
+; 6.091 ; washing_machine:washing_machine_driver|curr_state[0]    ; washing_machine:washing_machine_driver|wash_counter[4]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.165      ;
+; 6.091 ; washing_machine:washing_machine_driver|curr_state[0]    ; washing_machine:washing_machine_driver|wash_counter[3]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.165      ;
+; 6.091 ; washing_machine:washing_machine_driver|curr_state[0]    ; washing_machine:washing_machine_driver|wash_counter[2]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.165      ;
+; 6.091 ; washing_machine:washing_machine_driver|curr_state[0]    ; washing_machine:washing_machine_driver|wash_counter[1]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.165      ;
+; 6.209 ; washing_machine:washing_machine_driver|wash_counter[2]  ; washing_machine:washing_machine_driver|curr_state[1]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.283      ;
+; 6.211 ; washing_machine:washing_machine_driver|wash_counter[2]  ; washing_machine:washing_machine_driver|curr_state[0]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.285      ;
+; 6.282 ; washing_machine:washing_machine_driver|SPIN_counter[3]  ; washing_machine:washing_machine_driver|curr_state[1]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.356      ;
+; 6.284 ; washing_machine:washing_machine_driver|SPIN_counter[3]  ; washing_machine:washing_machine_driver|curr_state[0]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.358      ;
+; 6.295 ; washing_machine:washing_machine_driver|RINSE_counter[1] ; washing_machine:washing_machine_driver|curr_state[1]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.369      ;
+; 6.297 ; washing_machine:washing_machine_driver|RINSE_counter[1] ; washing_machine:washing_machine_driver|curr_state[0]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.371      ;
+; 6.308 ; washing_machine:washing_machine_driver|SPIN_counter[1]  ; washing_machine:washing_machine_driver|curr_state[1]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.382      ;
+; 6.310 ; washing_machine:washing_machine_driver|SPIN_counter[1]  ; washing_machine:washing_machine_driver|curr_state[0]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.384      ;
+; 6.318 ; washing_machine:washing_machine_driver|curr_state[0]    ; washing_machine:washing_machine_driver|SPIN_counter[1]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.392      ;
+; 6.397 ; washing_machine:washing_machine_driver|wash_counter[1]  ; washing_machine:washing_machine_driver|wash_counter[0]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.471      ;
+; 6.421 ; washing_machine:washing_machine_driver|curr_state[0]~en ; washing_machine:washing_machine_driver|SPIN_counter[0]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.495      ;
+; 6.421 ; washing_machine:washing_machine_driver|curr_state[0]~en ; washing_machine:washing_machine_driver|SPIN_counter[3]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.495      ;
+; 6.421 ; washing_machine:washing_machine_driver|curr_state[0]~en ; washing_machine:washing_machine_driver|SPIN_counter[2]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.495      ;
+; 6.490 ; washing_machine:washing_machine_driver|SPIN_counter[0]  ; washing_machine:washing_machine_driver|SPIN_counter[3]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.564      ;
+; 6.559 ; washing_machine:washing_machine_driver|curr_state[1]    ; washing_machine:washing_machine_driver|curr_state[0]~en ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.633      ;
+; 6.565 ; washing_machine:washing_machine_driver|wash_counter[3]  ; washing_machine:washing_machine_driver|wash_counter[0]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.639      ;
+; 6.565 ; washing_machine:washing_machine_driver|wash_counter[3]  ; washing_machine:washing_machine_driver|wash_counter[2]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.639      ;
+; 6.565 ; washing_machine:washing_machine_driver|wash_counter[3]  ; washing_machine:washing_machine_driver|wash_counter[1]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.639      ;
+; 6.579 ; washing_machine:washing_machine_driver|SPIN_counter[3]  ; washing_machine:washing_machine_driver|SPIN_counter[0]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.653      ;
+; 6.579 ; washing_machine:washing_machine_driver|SPIN_counter[3]  ; washing_machine:washing_machine_driver|SPIN_counter[2]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.653      ;
+; 6.589 ; washing_machine:washing_machine_driver|wash_counter[4]  ; washing_machine:washing_machine_driver|curr_state[1]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.663      ;
+; 6.591 ; washing_machine:washing_machine_driver|wash_counter[4]  ; washing_machine:washing_machine_driver|curr_state[0]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.665      ;
+; 6.602 ; washing_machine:washing_machine_driver|RINSE_counter[2] ; washing_machine:washing_machine_driver|curr_state[1]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.676      ;
+; 6.604 ; washing_machine:washing_machine_driver|RINSE_counter[2] ; washing_machine:washing_machine_driver|curr_state[0]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.678      ;
+; 6.605 ; washing_machine:washing_machine_driver|SPIN_counter[1]  ; washing_machine:washing_machine_driver|SPIN_counter[0]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.679      ;
+; 6.637 ; washing_machine:washing_machine_driver|SPIN_counter[2]  ; washing_machine:washing_machine_driver|curr_state[1]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.711      ;
+; 6.639 ; washing_machine:washing_machine_driver|SPIN_counter[2]  ; washing_machine:washing_machine_driver|curr_state[0]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.713      ;
+; 6.758 ; washing_machine:washing_machine_driver|curr_state[0]~en ; washing_machine:washing_machine_driver|curr_state[0]~en ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.832      ;
+; 6.818 ; washing_machine:washing_machine_driver|curr_state[0]~en ; washing_machine:washing_machine_driver|SPIN_counter[1]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.892      ;
+; 6.890 ; washing_machine:washing_machine_driver|curr_state[0]    ; washing_machine:washing_machine_driver|curr_state[0]~en ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 6.964      ;
+; 6.934 ; washing_machine:washing_machine_driver|SPIN_counter[2]  ; washing_machine:washing_machine_driver|SPIN_counter[0]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 7.008      ;
+; 6.948 ; washing_machine:washing_machine_driver|wash_counter[1]  ; washing_machine:washing_machine_driver|curr_state[1]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 7.022      ;
+; 6.950 ; washing_machine:washing_machine_driver|wash_counter[1]  ; washing_machine:washing_machine_driver|curr_state[0]    ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 7.024      ;
+; 6.976 ; washing_machine:washing_machine_driver|SPIN_counter[3]  ; washing_machine:washing_machine_driver|SPIN_counter[1]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 7.050      ;
+; 7.012 ; washing_machine:washing_machine_driver|curr_state[0]    ; washing_machine:washing_machine_driver|RINSE_counter[0] ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 7.086      ;
+; 7.060 ; washing_machine:washing_machine_driver|curr_state[0]~en ; washing_machine:washing_machine_driver|wash_counter[0]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 7.134      ;
+; 7.060 ; washing_machine:washing_machine_driver|curr_state[0]~en ; washing_machine:washing_machine_driver|wash_counter[4]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 7.134      ;
+; 7.060 ; washing_machine:washing_machine_driver|curr_state[0]~en ; washing_machine:washing_machine_driver|wash_counter[3]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 7.134      ;
+; 7.060 ; washing_machine:washing_machine_driver|curr_state[0]~en ; washing_machine:washing_machine_driver|wash_counter[2]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 7.134      ;
+; 7.060 ; washing_machine:washing_machine_driver|curr_state[0]~en ; washing_machine:washing_machine_driver|wash_counter[1]  ; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 0.000        ; 0.000      ; 7.134      ;
++-------+---------------------------------------------------------+---------------------------------------------------------+------------------------------------------------------+------------------------------------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clock_devider:sev_seg_clock_devider|curr_out'                                                                                                                                                                                             ;
++-------+-------------------------------------------------+-------------------------------------------------+----------------------------------------------+----------------------------------------------+--------------+------------+------------+
+; Slack ; From Node                                       ; To Node                                         ; Launch Clock                                 ; Latch Clock                                  ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------------------+-------------------------------------------------+----------------------------------------------+----------------------------------------------+--------------+------------+------------+
+; 2.015 ; seven_segment:sev_segment_driver|sevSegIndex[1] ; seven_segment:sev_segment_driver|sevSegIndex[1] ; clock_devider:sev_seg_clock_devider|curr_out ; clock_devider:sev_seg_clock_devider|curr_out ; 0.000        ; 0.000      ; 2.089      ;
+; 2.019 ; seven_segment:sev_segment_driver|sevSegIndex[1] ; seven_segment:sev_segment_driver|sevSegIndex[2] ; clock_devider:sev_seg_clock_devider|curr_out ; clock_devider:sev_seg_clock_devider|curr_out ; 0.000        ; 0.000      ; 2.093      ;
+; 2.270 ; seven_segment:sev_segment_driver|sevSegIndex[0] ; seven_segment:sev_segment_driver|sevSegIndex[2] ; clock_devider:sev_seg_clock_devider|curr_out ; clock_devider:sev_seg_clock_devider|curr_out ; 0.000        ; 0.000      ; 2.344      ;
+; 2.271 ; seven_segment:sev_segment_driver|sevSegIndex[0] ; seven_segment:sev_segment_driver|sevSegIndex[1] ; clock_devider:sev_seg_clock_devider|curr_out ; clock_devider:sev_seg_clock_devider|curr_out ; 0.000        ; 0.000      ; 2.345      ;
+; 2.389 ; seven_segment:sev_segment_driver|sevSegIndex[0] ; seven_segment:sev_segment_driver|sevSegIndex[0] ; clock_devider:sev_seg_clock_devider|curr_out ; clock_devider:sev_seg_clock_devider|curr_out ; 0.000        ; 0.000      ; 2.463      ;
+; 2.823 ; seven_segment:sev_segment_driver|sevSegIndex[2] ; seven_segment:sev_segment_driver|sevSegIndex[2] ; clock_devider:sev_seg_clock_devider|curr_out ; clock_devider:sev_seg_clock_devider|curr_out ; 0.000        ; 0.000      ; 2.897      ;
+; 2.827 ; seven_segment:sev_segment_driver|sevSegIndex[2] ; seven_segment:sev_segment_driver|sevSegIndex[1] ; clock_devider:sev_seg_clock_devider|curr_out ; clock_devider:sev_seg_clock_devider|curr_out ; 0.000        ; 0.000      ; 2.901      ;
++-------+-------------------------------------------------+-------------------------------------------------+----------------------------------------------+----------------------------------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                                                                         ;
++------------------------------------------------------+------------------------------------------------------+----------+----------+----------+----------+
+; From Clock                                           ; To Clock                                             ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------------------------------------------------+------------------------------------------------------+----------+----------+----------+----------+
+; clk                                                  ; clk                                                  ; 3837     ; 0        ; 0        ; 0        ;
+; clock_devider:sev_seg_clock_devider|curr_out         ; clk                                                  ; 1        ; 1        ; 0        ; 0        ;
+; clock_devider:washing_machine_clock_devider|curr_out ; clk                                                  ; 1        ; 1        ; 0        ; 0        ;
+; clock_devider:sev_seg_clock_devider|curr_out         ; clock_devider:sev_seg_clock_devider|curr_out         ; 7        ; 0        ; 0        ; 0        ;
+; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 234      ; 0        ; 0        ; 0        ;
++------------------------------------------------------+------------------------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                                                                          ;
++------------------------------------------------------+------------------------------------------------------+----------+----------+----------+----------+
+; From Clock                                           ; To Clock                                             ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------------------------------------------------+------------------------------------------------------+----------+----------+----------+----------+
+; clk                                                  ; clk                                                  ; 3837     ; 0        ; 0        ; 0        ;
+; clock_devider:sev_seg_clock_devider|curr_out         ; clk                                                  ; 1        ; 1        ; 0        ; 0        ;
+; clock_devider:washing_machine_clock_devider|curr_out ; clk                                                  ; 1        ; 1        ; 0        ; 0        ;
+; clock_devider:sev_seg_clock_devider|curr_out         ; clock_devider:sev_seg_clock_devider|curr_out         ; 7        ; 0        ; 0        ; 0        ;
+; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; 234      ; 0        ; 0        ; 0        ;
++------------------------------------------------------+------------------------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 7     ; 7    ;
+; Unconstrained Input Port Paths  ; 169   ; 169  ;
+; Unconstrained Output Ports      ; 15    ; 15   ;
+; Unconstrained Output Port Paths ; 64    ; 64   ;
++---------------------------------+-------+------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Clock Status Summary                                                                                                             ;
++------------------------------------------------------+------------------------------------------------------+------+-------------+
+; Target                                               ; Clock                                                ; Type ; Status      ;
++------------------------------------------------------+------------------------------------------------------+------+-------------+
+; clk                                                  ; clk                                                  ; Base ; Constrained ;
+; clock_devider:sev_seg_clock_devider|curr_out         ; clock_devider:sev_seg_clock_devider|curr_out         ; Base ; Constrained ;
+; clock_devider:washing_machine_clock_devider|curr_out ; clock_devider:washing_machine_clock_devider|curr_out ; Base ; Constrained ;
++------------------------------------------------------+------------------------------------------------------+------+-------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                          ;
++-------------+--------------------------------------------------------------------------------------+
+; Input Port  ; Comment                                                                              ;
++-------------+--------------------------------------------------------------------------------------+
+; reset       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; start       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; userProg[0] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; userProg[1] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; userProg[2] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; userProg[3] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; userProg[4] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+--------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                               ;
++------------------+---------------------------------------------------------------------------------------+
+; Output Port      ; Comment                                                                               ;
++------------------+---------------------------------------------------------------------------------------+
+; sevSeg_data[0]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sevSeg_data[1]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sevSeg_data[2]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sevSeg_data[3]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sevSeg_data[4]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sevSeg_data[5]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sevSeg_data[6]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sevSeg_driver[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sevSeg_driver[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sevSeg_driver[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sevSeg_driver[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sevSeg_driver[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sevSeg_driver[5] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; state[0]         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; state[1]         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------------+---------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                          ;
++-------------+--------------------------------------------------------------------------------------+
+; Input Port  ; Comment                                                                              ;
++-------------+--------------------------------------------------------------------------------------+
+; reset       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; start       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; userProg[0] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; userProg[1] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; userProg[2] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; userProg[3] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; userProg[4] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+--------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                               ;
++------------------+---------------------------------------------------------------------------------------+
+; Output Port      ; Comment                                                                               ;
++------------------+---------------------------------------------------------------------------------------+
+; sevSeg_data[0]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sevSeg_data[1]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sevSeg_data[2]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sevSeg_data[3]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sevSeg_data[4]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sevSeg_data[5]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sevSeg_data[6]   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sevSeg_driver[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sevSeg_driver[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sevSeg_driver[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sevSeg_driver[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sevSeg_driver[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; sevSeg_driver[5] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; state[0]         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; state[1]         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+    Info: Processing started: Sat May 20 02:49:42 2023
+Info: Command: quartus_sta FinalProject -c FinalProject
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'FinalProject.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clock_devider:washing_machine_clock_devider|curr_out clock_devider:washing_machine_clock_devider|curr_out
+    Info (332105): create_clock -period 1.000 -name clk clk
+    Info (332105): create_clock -period 1.000 -name clock_devider:sev_seg_clock_devider|curr_out clock_devider:sev_seg_clock_devider|curr_out
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -10.233
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):   -10.233            -644.354 clk 
+    Info (332119):    -8.480            -113.447 clock_devider:washing_machine_clock_devider|curr_out 
+    Info (332119):    -2.161              -6.041 clock_devider:sev_seg_clock_devider|curr_out 
+Info (332146): Worst-case hold slack is -1.839
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -1.839              -2.987 clk 
+    Info (332119):     1.798               0.000 clock_devider:washing_machine_clock_devider|curr_out 
+    Info (332119):     2.015               0.000 clock_devider:sev_seg_clock_devider|curr_out 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 clk 
+    Info (332119):     0.247               0.000 clock_devider:sev_seg_clock_devider|curr_out 
+    Info (332119):     0.247               0.000 clock_devider:washing_machine_clock_devider|curr_out 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4682 megabytes
+    Info: Processing ended: Sat May 20 02:49:43 2023
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
+
+
