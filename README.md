@@ -1,1 +1,2 @@
 # Washing-Machine
+The objective of this project is to develop a versatile washing machine controller capable of controlling various wash cycles, such as washing, rinsing, spinning, and idle, while supporting multiple pre-programmed wash programs tailored to specific fabric types or clothing requirements. The controller is designed to provide a seamless user experience by incorporating intuitive control panel buttons and a seven-segment display for visual feedback.
