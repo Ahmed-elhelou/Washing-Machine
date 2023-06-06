@@ -17,6 +17,7 @@ architecture washing_machine_arch of washing_machine is
 	constant SPIN: std_logic_vector(1 downto 0) := "01";
 	constant RINSE: std_logic_vector(1 downto 0) := "10";
 	constant IDLE: std_logic_vector(1 downto 0) := "11";
+	
 	--programs 
 	constant COTTON: std_logic_vector(4 downto 0) := "10000";
 	constant RAPID: std_logic_vector(4 downto 0) := "01000";

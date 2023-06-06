@@ -128,3 +128,7 @@ force -freeze sim:/main/userProg 01000 0
 force -freeze sim:/main/start 1 0
 force -freeze sim:/main/reset 0 0
 run
+force -freeze sim:/main/start 0 0
+run
+# End time: 03:02:02 on May 20,2023, Elapsed time: 0:12:06
+# Errors: 0, Warnings: 1
