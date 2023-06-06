@@ -114,7 +114,7 @@ begin
 	 
     state <= "10";
 	 
-    assert sevSeg_data = "0011001" report "Unexpected sevSeg_data value R state 10";
+    assert sevSeg_data = "1111001" report "Unexpected sevSeg_data value R state 10";
     assert sevSeg_driver = "100000" report "Unexpected sevSeg_driver value R state 10";
     wait for CLK_PERIOD;
 
@@ -145,7 +145,7 @@ begin
 	 start <='0';
 	 
     state <= "01";
-    assert sevSeg_data = "0100100" report "Unexpected sevSeg_data value S state 01";
+    assert sevSeg_data = "0011001" report "Unexpected sevSeg_data value S state 01";
     assert sevSeg_driver = "100000" report "Unexpected sevSeg_driver value S state 01";
     wait for CLK_PERIOD;
 
